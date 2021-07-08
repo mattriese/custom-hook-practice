@@ -1,16 +1,20 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import UserContext from "./Context";
 
 export default function useCustomHook() {
-  const [currentUser, setCurrentUser] = useState("");
+  let contextUser = useContext(UserContext)
+  const [currentUser, setCurrentUser] = useState(contextUser);
 
   function login(name) {
     // console.log("loginform name::", name);
-    setCurrentUser(name);
+    contextUser = name;
+    setCurrentUser(contextUser);
   }
 
   function logout(evt) {
     evt.preventDefault();
-    setCurrentUser("");
+    contextUser = "";
+    setCurrentUser(contextUser);
   }
   return {
     currentUser,

@@ -4,7 +4,7 @@ import useCustomHook from './CustomHook';
 import App from './App';
 
 function App2() {
-  const { currentUser } = useCustomHook();
+  let { currentUser } = useCustomHook();
   console.log("currentUser in App2=== ", currentUser);
 
   return (
