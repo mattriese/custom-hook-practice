@@ -1,24 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import LoginForm from './LoginForm';
+import UserContext from './Context';
+import useCustomHook from './CustomHook';
+import Display from './Display';
 
 function App() {
+  const { currentUser } = useCustomHook();
+  console.log("currentUser in App=== ", currentUser);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={currentUser}>
+      <div className="App">
+        <LoginForm />
+        <Display />
+      </div>
+    </UserContext.Provider>
   );
 }
 
