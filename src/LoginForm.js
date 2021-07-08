@@ -32,8 +32,10 @@ export default function LoginForm() {
         <button>Logout</button>
       </form>
       )}
-      <h1>"Hello, {currentUser}"</h1>
+      <p>h1 inside LoginForm component (not a Display component)</p>
+      <h1>"currentUser: {currentUser}"</h1>
       <hr></hr>
+      <p>Display component inside LoginForm (child of LoginForm)</p>
       <Display />
     </div>
   )
