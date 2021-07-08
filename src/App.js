@@ -10,8 +10,9 @@ function App() {
   return (
     <UserContext.Provider value={currentUser}>
       <div className="App">
-        <LoginForm />
         <Display />
+        <hr></hr>
+        <LoginForm />
       </div>
     </UserContext.Provider>
   );

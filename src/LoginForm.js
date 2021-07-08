@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import useCustomHook from "./CustomHook";
+import Display from "./Display";
 
 export default function LoginForm() {
   const { login, currentUser, logout } = useCustomHook()
@@ -31,6 +32,9 @@ export default function LoginForm() {
         <button>Logout</button>
       </form>
       )}
+      <h1>"Hello, {currentUser}"</h1>
+      <hr></hr>
+      <Display />
     </div>
   )
 }
